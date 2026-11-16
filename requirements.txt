@@ -1,0 +1,13 @@
+numpy>=1.26
+scipy>=1.11
+torch>=2.2
+constriction>=0.4
+imagecodecs>=2024.1.1
+pydicom>=3.0
+idc-index>=0.8
+pylibjpeg>=2.0
+pylibjpeg-libjpeg>=2.0
+pylibjpeg-openjpeg>=2.0
+pandas>=2.0
+matplotlib>=3.8
+pytest>=8
