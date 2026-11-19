@@ -18,6 +18,7 @@ test image was decoded again and checked bit-for-bit against the original.
 | Lossless reconstruction check (original, decoded, zero difference) | `scripts/make_figures.py` | `results/fig_lossless.png` |
 | Fourier-Bessel spectrum, boundaries and chosen decomposition depth | `scripts/make_figures.py` | `results/fig_fbse.png` |
 | Trained entropy models used by all of the above | `scripts/train.py` | `models/full.pt`, `models/plain.pt` |
+| L3C learned-codec baseline, per image, on the same 258 test images (bit-exact decode checked) | L3C training and evaluation run on Colab (code not in this repository) | `results/per_image_l3c.csv` |
 | Public test data | `scripts/fetch_idc.py` | `data/` (not committed) |
 
 Ablation configurations:
