@@ -19,16 +19,18 @@ import constriction
 import numpy as np
 import torch
 
-from . import fbse, lifting
+from . import fbse, lifting, rans
 from .model import MODALITIES, EntropyModel, upsample
 
-MAGIC = b"WVC1"
+MAGIC = b"WVC1"            # range coder (constriction)
+MAGIC_RANS = b"WVR1"       # interleaved rANS (wavecomp.rans)
 FAMILIES = ["legall53", "adaptive"]
 DTYPES = ["uint8", "int8", "uint16", "int16", "uint32", "int32"]
 LL_DEPTH = 32          # recursion depth for the low band (stops at 8 px anyway)
 DETAIL_DEPTH = 2       # polyphase recursion depth for detail subbands
 MU_Q = 16.0            # mean quantised to 1/16
 LOGB_Q = 32.0          # log2(scale) quantised to 1/32
+PI_Q = 16.0            # DMOL mixture logits quantised to 1/16
 _Q = constriction.stream.queue
 _M = constriction.stream.model
 
@@ -70,12 +72,61 @@ def quantise_params(mu, b, lo, hi):
     return mu, np.exp2(lb)
 
 
+def dmol_nll_bits(x, logits, mu, scale, lo, hi):
+    """-log2 P(x) for a discretised mixture of logistics on the integers lo..hi.
+
+    The first and last bins absorb the tails, as in PixelCNN++ (Salimans et al. 2017).
+    x: (B,1,H,W); logits, mu, scale: (B,K,H,W); lo, hi: per-sample arrays.
+    """
+    F_ = torch.nn.functional
+    lo = _t(lo)
+    hi = _t(hi)
+    inv = 1.0 / scale
+    c = x - mu
+    up = inv * (c + 0.5)
+    dn = inv * (c - 0.5)
+    log_cdf_up = up - F_.softplus(up)                 # log sigmoid(up)
+    log_1m_cdf_dn = -F_.softplus(dn)                  # log (1 - sigmoid(dn))
+    diff = torch.sigmoid(up) - torch.sigmoid(dn)
+    mid = inv * c
+    log_pdf_mid = mid - torch.log(scale) - 2.0 * F_.softplus(mid)
+    log_mid = torch.where(diff > 1e-5, torch.log(torch.clamp(diff, min=1e-12)), log_pdf_mid)
+    logp = torch.where(x <= lo, log_cdf_up, torch.where(x >= hi, log_1m_cdf_dn, log_mid))
+    logp = torch.logsumexp(logp + torch.log_softmax(logits, 1), 1, keepdim=True)
+    return -torch.clamp(logp, min=-31 * np.log(2)) / np.log(2)
+
+
+def quantise_mixture(logits, mu, scale, lo, hi):
+    """Quantise DMOL parameters (shape (n, K)) so encoder and decoder build the same CDF."""
+    lg = np.clip(np.round(logits.astype(np.float64) * PI_Q) / PI_Q, -16, 16)
+    mu = np.clip(np.round(mu.astype(np.float64) * MU_Q) / MU_Q, lo - 1, hi + 1)
+    ls = np.clip(np.round(np.log2(np.maximum(scale.astype(np.float64), 1e-6)) * LOGB_Q) / LOGB_Q, -4, 24)
+    return lg, mu, np.exp2(ls)
+
+
+def _flat_k(t):
+    """(1,K,h,w) tensor -> (h*w, K) float64 array."""
+    return t.detach().numpy()[0].reshape(t.shape[1], -1).T.astype(np.float64)
+
+
+def rans_cdf(P, lo, hi):
+    """Continuous CDF F(y, idx) for the quantised distribution P (Laplace or DMOL)."""
+    if len(P) == 2:
+        mu_q, b_q = quantise_params(P[0].detach().numpy().ravel(), P[1].detach().numpy().ravel(), lo, hi)
+        return rans.laplace_cdf(mu_q, b_q)
+    lg, mu, sc = quantise_mixture(_flat_k(P[0]), _flat_k(P[1]), _flat_k(P[2]), lo, hi)
+    return rans.logistic_mixture_cdf(lg, mu, sc)
+
+
 class TrainCoder:
     def __init__(self):
         self.bits = 0.0
 
-    def code(self, x, mu, b, lo, hi):
-        self.bits = self.bits + laplace_nll_bits(x.float(), mu, b).sum()
+    def code(self, x, P, lo, hi):
+        if len(P) == 2:
+            self.bits = self.bits + laplace_nll_bits(x.float(), *P).sum()
+        else:
+            self.bits = self.bits + dmol_nll_bits(x.float(), *P, lo, hi).sum()
         return x
 
 
@@ -83,9 +134,12 @@ class EncCoder:
     def __init__(self):
         self.enc = _Q.RangeEncoder()
 
-    def code(self, x, mu, b, lo, hi):
+    def code(self, x, P, lo, hi):
         if int(lo) == int(hi):
             return x
+        if len(P) != 2:
+            raise ValueError("the range coder supports the Laplace model only; use entropy_coder='rans'")
+        mu, b = P
         model = _M.QuantizedLaplace(int(lo), int(hi))
         mu_q, b_q = quantise_params(mu.detach().numpy().ravel(), b.detach().numpy().ravel(), lo, hi)
         self.enc.encode(x.numpy().ravel().astype(np.int32), model, mu_q, b_q)
@@ -96,13 +150,40 @@ class DecCoder:
     def __init__(self, words):
         self.dec = _Q.RangeDecoder(words)
 
-    def code(self, x, mu, b, lo, hi):
+    def code(self, x, P, lo, hi):
+        mu, b = P
         if int(lo) == int(hi):
             return torch.full(mu.shape, int(lo), dtype=torch.int64)
         model = _M.QuantizedLaplace(int(lo), int(hi))
         mu_q, b_q = quantise_params(mu.detach().numpy().ravel(), b.detach().numpy().ravel(), lo, hi)
         v = self.dec.decode(model, mu_q, b_q)
         return torch.from_numpy(v.astype(np.int64)).reshape(mu.shape)
+
+
+class RansEncCoder:
+    def __init__(self, n_lanes):
+        self.enc = rans.RansEncoder(n_lanes)
+
+    def code(self, x, P, lo, hi):
+        lo, hi = int(lo), int(hi)
+        if lo == hi:
+            return x
+        self.enc.add(x.numpy().ravel(), rans_cdf(P, lo, hi), lo, hi)
+        return x
+
+
+class RansDecCoder:
+    def __init__(self, buf):
+        self.dec = rans.RansDecoder(buf)
+
+    def code(self, x, P, lo, hi):
+        lo, hi = int(lo), int(hi)
+        shape = P[0].shape[:1] + (1,) + P[0].shape[2:]
+        if lo == hi:
+            return torch.full(shape, lo, dtype=torch.int64)
+        n = int(np.prod(shape))
+        v = self.dec.decode(n, rans_cdf(P, lo, hi), lo, hi)
+        return torch.from_numpy(v).reshape(shape)
 
 
 # ---------------------------------------------------------------------------
@@ -116,8 +197,8 @@ def code_plane(model, coder, feat, xtrue, depth, m, s, lo, hi):
         return (v.float() - m) / s
 
     if depth == 0 or min(H, W) < 8:
-        mu, logb = model.params(feat, torch.zeros(B, 1, H, W), torch.zeros(B, 1, H, W), 0)
-        return coder.code(xtrue, mu * s + m, s * torch.exp(logb), lo, hi)
+        P = model.params(feat, torch.zeros(B, 1, H, W), torch.zeros(B, 1, H, W), 0)
+        return coder.code(xtrue, _scale(P, m, s), lo, hi)
     x00 = code_plane(model, coder, feat[..., ::2, ::2],
                      None if xtrue is None else xtrue[..., ::2, ::2], depth - 1, m, s, lo, hi)
     out = torch.zeros(B, 1, H, W, dtype=torch.int64)
@@ -129,14 +210,22 @@ def code_plane(model, coder, feat, xtrue, depth, m, s, lo, hi):
     for k, (dy, dx) in enumerate([(1, 1), (0, 1), (1, 0)]):
         if H <= dy or W <= dx:
             continue
-        mu, logb = model.params(feat, known, mask, k + 1)
+        P = model.params(feat, known, mask, k + 1)
         sl = (Ellipsis, slice(dy, None, 2), slice(dx, None, 2))
-        xs = coder.code(None if xtrue is None else xtrue[sl], mu[sl] * s + m,
-                        s * torch.exp(logb[sl]), lo, hi)
+        xs = coder.code(None if xtrue is None else xtrue[sl], _scale(tuple(p[sl] for p in P), m, s), lo, hi)
         out[sl] = xs
         known[sl] = nrm(xs)
         mask[sl] = 1
     return out
+
+
+def _scale(P, m, s):
+    """Model outputs (normalised units) -> distribution parameters in coefficient units."""
+    if len(P) == 2:
+        mu, logb = P
+        return mu * s + m, s * torch.exp(logb)
+    logits, mu, logs = P
+    return logits, mu * s + m, s * torch.exp(logs)
 
 
 def _t(v):
@@ -233,9 +322,9 @@ def unpack(rec, table):
 # ---------------------------------------------------------------------------
 # header
 # ---------------------------------------------------------------------------
-def _write_header(f, img, L, family, mod, dec, stats, crc, table=None):
+def _write_header(f, img, L, family, mod, dec, stats, crc, table=None, magic=MAGIC):
     H, W = img.shape
-    f.write(MAGIC)
+    f.write(magic)
     f.write(struct.pack("<IIBBBB", H, W, DTYPES.index(str(img.dtype)), L, FAMILIES.index(family),
                         MODALITIES.index(mod)))
     f.write(struct.pack("<I", crc))
@@ -252,7 +341,8 @@ def _write_header(f, img, L, family, mod, dec, stats, crc, table=None):
 
 
 def _read_header(f):
-    assert f.read(4) == MAGIC, "not a WVC1 stream"
+    magic = f.read(4)
+    assert magic in (MAGIC, MAGIC_RANS), "not a WVC1/WVR1 stream"
     H, W, dt, L, fam, mod = struct.unpack("<IIBBBB", f.read(12))
     crc, = struct.unpack("<I", f.read(4))
     ntab, = struct.unpack("<I", f.read(4))
@@ -270,7 +360,7 @@ def _read_header(f):
     else:
         filters = [(lifting.LEGALL_P,) * 3] * L
     stats = [struct.unpack("<ieii", f.read(14)) for _ in range(1 + 3 * L)]
-    return dict(H=H, W=W, dtype=DTYPES[dt], L=L, family=family, mod=MODALITIES[mod], crc=crc, table=table,
+    return dict(magic=magic, H=H, W=W, dtype=DTYPES[dt], L=L, family=family, mod=MODALITIES[mod], crc=crc, table=table,
                 filters=filters, stats=stats)
 
 
@@ -297,14 +387,19 @@ def _bands_coarse_to_fine(dec):
 # neural codec
 # ---------------------------------------------------------------------------
 @torch.no_grad()
-def encode(img, model, modality, levels=None, family="adaptive", ntaps=4):
+def encode(img, model, modality, levels=None, family="adaptive", ntaps=4, entropy_coder=None):
+    """entropy_coder: "range" (constriction range coder, Laplace model only) or "rans"
+    (interleaved rANS, any model). Default: "rans" for a DMOL model, else "range"."""
+    if entropy_coder is None:
+        entropy_coder = "rans" if getattr(model, "mixture", 0) else "range"
     img = np.asarray(img)
     work, table = pack(img)
     dec, L = _prepare(work, levels, family, ntaps)
     stats = all_stats(dec)
     f = io.BytesIO()
-    _write_header(f, img, L, family, modality, dec, stats, zlib.crc32(img.tobytes()), table)
-    coder = EncCoder()
+    _write_header(f, img, L, family, modality, dec, stats, zlib.crc32(img.tobytes()), table,
+                  MAGIC_RANS if entropy_coder == "rans" else MAGIC)
+    coder = RansEncCoder(rans.lanes_for(img.size)) if entropy_coder == "rans" else EncCoder()
     tb = [torch.from_numpy(b.astype(np.int64))[None, None] for b in _bands_coarse_to_fine(dec)]
     st = [(np.array([m]), np.array([s]), lo, hi) for (m, s, lo, hi) in stats]
     mod = torch.tensor([MODALITIES.index(modality)])
@@ -315,7 +410,10 @@ def encode(img, model, modality, levels=None, family="adaptive", ntaps=4):
             ll[0, 0].numpy(), tuple(t[0, 0].numpy() for t in three), filters_c2f[li]))[None, None]
 
     traverse(model.eval(), coder, mod, st, _shapes(dec.pad_shape, L), tb, low_fn)
-    f.write(coder.enc.get_compressed().astype("<u4").tobytes())
+    if entropy_coder == "rans":
+        f.write(coder.enc.finish())
+    else:
+        f.write(coder.enc.get_compressed().astype("<u4").tobytes())
     return f.getvalue()
 
 
@@ -324,11 +422,13 @@ def decode(blob, model):
     f = io.BytesIO(blob)
     hd = _read_header(f)
     rest = f.read()
-    words = np.frombuffer(rest[:len(rest) // 4 * 4], dtype="<u4").astype(np.uint32)
     L = hd["L"]
     m_ = 1 << L
     pad_shape = (hd["H"] + (-hd["H"]) % m_, hd["W"] + (-hd["W"]) % m_)
-    coder = DecCoder(words)
+    if hd["magic"] == MAGIC_RANS:
+        coder = RansDecCoder(rest)
+    else:
+        coder = DecCoder(np.frombuffer(rest[:len(rest) // 4 * 4], dtype="<u4").astype(np.uint32))
     st = [(np.array([m]), np.array([s]), lo, hi) for (m, s, lo, hi) in hd["stats"]]
     mod = torch.tensor([MODALITIES.index(hd["mod"])])
     filters_c2f = hd["filters"][::-1]
@@ -338,6 +438,8 @@ def decode(blob, model):
             ll[0, 0].numpy(), tuple(t[0, 0].numpy() for t in three), filters_c2f[li]))[None, None]
 
     coded = traverse(model.eval(), coder, mod, st, _shapes(pad_shape, L), None, low_fn)
+    if hd["magic"] == MAGIC_RANS and not coder.dec.check_final():
+        raise ValueError("rANS stream not fully consumed: corrupt stream or model mismatch")
     ll = coded[0][0, 0].numpy()
     bands = []
     k = 1

@@ -24,12 +24,17 @@ NAMES = {
     "E": "E  C + ConvLSTM neural entropy model (proposed)",
     "F": "F  LeGall 5/3 (5 lv) + ConvLSTM neural model",
     "G": "G  adaptive lifting (5 lv) + ConvLSTM neural model",
+    "H": "H  E with rANS instead of the range coder",
+    "I": "I  E with DMOL (K = 5) probability model + rANS",
     "png": "PNG (zlib, level 9)",
     "jpegls": "JPEG-LS (CharLS)",
     "jpeg2000": "JPEG 2000 lossless (OpenJPEG, 5/3)",
     "jpegxl": "JPEG XL lossless (libjxl, effort 7)",
+    "calic": "CALIC (our C implementation, Wu & Memon 1997)",
+    "flif": "FLIF (reference encoder, -N -E100)",
+    "l3c": "L3C architecture, 16-bit greyscale (150k GPU steps)",
 }
-ORDER = ["png", "jpeg2000", "jpegls", "jpegxl", "A", "B", "C", "D", "E", "F", "G"]
+ORDER = ["png", "jpeg2000", "jpegls", "calic", "flif", "jpegxl", "l3c", "A", "B", "C", "D", "E", "F", "G", "H", "I"]
 MODS = {"xray": "Chest X-ray (LIDC-IDRI CR/DX)", "ct": "Thoracic CT (LIDC-IDRI)",
         "mri": "Brain MRI (UPENN-GBM)"}
 
@@ -88,6 +93,8 @@ def main():
 
     # ablation figure
     cfgs = [c for c in ["A", "B", "C", "D", "E"] if any(c in summary[m] for m in summary)]
+    if not cfgs:                      # e.g. a results folder with only the L3C baseline
+        return
     fig, axes = plt.subplots(1, len(summary), figsize=(4.2 * len(summary), 3.4), squeeze=False)
     for ax, (mod, s) in zip(axes[0], summary.items()):
         vals = [s[c]["bpp"] for c in cfgs if c in s]

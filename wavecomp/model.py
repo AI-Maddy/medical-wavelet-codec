@@ -45,10 +45,14 @@ class ConvLSTMCell(nn.Module):
 
 class EntropyModel(nn.Module):
     def __init__(self, ch=32, head_ch=24, hid=16, use_lstm=True, use_attention=True,
-                 n_mod=len(MODALITIES)):
+                 n_mod=len(MODALITIES), mixture=0):
+        """mixture = 0: discretised Laplace (2 outputs per coefficient).
+        mixture = K > 0: discretised mixture of K logistics (DMOL, 3K outputs:
+        mixture logits, means, log-scales)."""
         super().__init__()
         self.cfg = dict(ch=ch, head_ch=head_ch, hid=hid, use_lstm=use_lstm,
-                        use_attention=use_attention, n_mod=n_mod)
+                        use_attention=use_attention, n_mod=n_mod, mixture=mixture)
+        self.mixture = mixture
         self.hid = hid
         self.use_lstm = use_lstm
         self.use_attention = use_attention
@@ -66,7 +70,13 @@ class EntropyModel(nn.Module):
             nn.Conv2d(hin, head_ch, 3, padding=1), nn.GELU(),
             nn.Conv2d(head_ch, head_ch, 3, padding=1), nn.GELU(),
             nn.Conv2d(head_ch, head_ch, 3, padding=1), nn.GELU(),
-            nn.Conv2d(head_ch, 2, 1))
+            nn.Conv2d(head_ch, 3 * mixture if mixture else 2, 1))
+        if mixture:
+            # spread the initial component means so the mixture starts multi-modal
+            with torch.no_grad():
+                b = self.head[-1].bias
+                b.zero_()
+                b[mixture:2 * mixture] = torch.linspace(-1, 1, mixture)
 
     # ---- context ---------------------------------------------------------
     def context(self, low, sibs, parents, h, band, mod):
@@ -86,6 +96,9 @@ class EntropyModel(nn.Module):
         ph = torch.zeros(B, N_PHASES, H, W, dtype=feat.dtype)
         ph[:, phase] = 1
         out = self.head(torch.cat([feat, known, mask, ph], 1))
+        if self.mixture:
+            K = self.mixture
+            return out[:, :K], out[:, K:2 * K], out[:, 2 * K:].clamp(-6, 8)
         mu, logb = out[:, :1], out[:, 1:]
         return mu, logb.clamp(-6, 8)
 

@@ -108,3 +108,72 @@ def test_histogram_packing(model):
     assert table is not None and packed.max() < 700
     assert np.array_equal(codec.decode(codec.encode(x, model, "xray"), model), x)
     assert np.array_equal(codec.decode_static(codec.encode_static(x)), x)
+
+
+# ---- rANS and DMOL --------------------------------------------------------
+from wavecomp import rans  # noqa: E402
+
+
+@pytest.mark.parametrize("seed", [0, 1, 2])
+def test_rans_roundtrip(seed):
+    rng = np.random.default_rng(seed)
+    enc = rans.RansEncoder(rans.lanes_for(30000))
+    calls = []
+    for c in range(6):
+        n = int(rng.integers(1, 9000))
+        lo, hi = int(rng.integers(-5000, 0)), int(rng.integers(1, 70000))
+        K = 5
+        mu = rng.normal(0, 40, (n, K))
+        sc = np.exp(rng.normal(1, 1.5, (n, K)))
+        x = np.clip(np.round(mu[:, 0] + rng.laplace(0, 8, n)), lo, hi).astype(np.int64)
+        x[: min(3, n)] = [lo, hi, lo][: min(3, n)]            # alphabet edges
+        F = (rans.logistic_mixture_cdf(rng.normal(size=(n, K)), mu, sc) if c % 2
+             else rans.laplace_cdf(mu[:, 0], sc[:, 0]))
+        enc.add(x, F, lo, hi)
+        calls.append((x, F, lo, hi))
+    dec = rans.RansDecoder(enc.finish())
+    for x, F, lo, hi in calls:
+        assert np.array_equal(dec.decode(len(x), F, lo, hi), x)
+    assert dec.check_final()
+
+
+@pytest.fixture(scope="module")
+def dmol_model():
+    torch.manual_seed(0)
+    return EntropyModel(mixture=5).eval()
+
+
+@pytest.mark.parametrize("dtype", DTYPES)
+@pytest.mark.parametrize("shape", SHAPES[:3])
+def test_dmol_rans_codec(dmol_model, dtype, shape):
+    x = phantom(shape, dtype, seed=3)
+    blob = codec.encode(x, dmol_model, "mri")
+    assert blob[:4] == codec.MAGIC_RANS
+    assert np.array_equal(codec.decode(blob, dmol_model), x)
+
+
+def test_laplace_rans_codec(model):
+    x = phantom((130, 97), np.uint16, seed=4)
+    blob = codec.encode(x, model, "ct", entropy_coder="rans")
+    assert np.array_equal(codec.decode(blob, model), x)
+
+
+def test_dmol_loss_matches_rans_size(dmol_model):
+    """The training loss (ideal code length) and the real rANS stream agree to within the
+    parameter quantisation and stream overhead."""
+    x = phantom((128, 128), np.uint16, seed=5)
+    work, _ = codec.pack(x)
+    d = lifting.forward(work, 3, "adaptive", 4)
+    tb = [torch.from_numpy(b.astype(np.int64))[None, None] for b in codec._bands_coarse_to_fine(d)]
+    st = [(np.array([m]), np.array([s]), lo, hi) for (m, s, lo, hi) in codec.all_stats(d)]
+    lows, cur = [], d.ll
+    for l in range(2, 0, -1):
+        cur = lifting.inverse_level(cur, d.bands[l], d.filters[l])
+        lows.append(torch.from_numpy(cur)[None, None])
+    coder = codec.TrainCoder()
+    with torch.no_grad():
+        codec.traverse(dmol_model, coder, torch.tensor([2]), st, codec._shapes(d.pad_shape, 3), tb,
+                       lambda li, ll, three: lows[li])
+    ideal = float(coder.bits) / x.size
+    real = 8 * len(codec.encode(x, dmol_model, "mri", levels=3)) / x.size
+    assert abs(real - ideal) < 0.15, (real, ideal)

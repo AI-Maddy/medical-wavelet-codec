@@ -1,9 +1,10 @@
 """Train the neural entropy model on random crops of the *training* patients.
 
-The loss is the exact code length the range coder will spend (bits per pixel
-under the discretised Laplace model), so training directly minimises file size.
+The loss is the exact code length the entropy coder will spend (bits per pixel
+under the discretised Laplace model, or under the DMOL model with --mixture K),
+so training directly minimises file size.
 
-usage: python scripts/train.py --data data --out models/full.pt [--no-lstm] [--no-attention]
+usage: python scripts/train.py --data data --out models/full.pt [--no-lstm] [--no-attention] [--mixture 5]
 """
 import argparse
 import json
@@ -93,6 +94,8 @@ def main():
     ap.add_argument("--lr", type=float, default=2e-3)
     ap.add_argument("--no-lstm", action="store_true")
     ap.add_argument("--no-attention", action="store_true")
+    ap.add_argument("--mixture", type=int, default=0,
+                    help="K > 0: discretised mixture of K logistics (DMOL) instead of Laplace")
     ap.add_argument("--threads", type=int, default=4)
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--modalities", nargs="+", default=MODALITIES)
@@ -110,7 +113,8 @@ def main():
         print(f"{mod}: {len(imgs)} train images -> {len(banks[mod])} crops ({time.time() - t:.0f}s)",
               flush=True)
 
-    model = EntropyModel(use_lstm=not args.no_lstm, use_attention=not args.no_attention)
+    model = EntropyModel(use_lstm=not args.no_lstm, use_attention=not args.no_attention,
+                         mixture=args.mixture)
     opt = torch.optim.Adam(model.parameters(), lr=args.lr)
     sched = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=args.lr, total_steps=args.steps,
                                                 pct_start=0.05)

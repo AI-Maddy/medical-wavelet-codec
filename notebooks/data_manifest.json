@@ -1,0 +1,966 @@
+{
+ "xray/test_LIDC-IDRI-0003_013050559882.npz": {
+  "n": 1,
+  "sha256": "176360edb66ed12fb8222dc60e60a7c5cbf3efe8aeb57990752dcba8c28d07dc"
+ },
+ "xray/test_LIDC-IDRI-0007_425330987749.npz": {
+  "n": 1,
+  "sha256": "5b5cb2becfc3e4c67420398e3f27d3073033ce7747921ebe817fce399e8e1fce"
+ },
+ "xray/test_LIDC-IDRI-0024_934926416602.npz": {
+  "n": 1,
+  "sha256": "6a503e7c33c4f4b0d68ffa20ec33b6a122ec4e743566d47f371bbfc423403ddf"
+ },
+ "xray/test_LIDC-IDRI-0028_972887619912.npz": {
+  "n": 1,
+  "sha256": "22f427d1c6ff1aba7a4dc8cc7665eb277e47f139e83eb14fc812e3a50b33628a"
+ },
+ "xray/test_LIDC-IDRI-0029_891304485946.npz": {
+  "n": 1,
+  "sha256": "e51bcfe8f34cac4181432ae58d5defef9b1439212001d30a4ea66da9caf2f5bf"
+ },
+ "xray/test_LIDC-IDRI-0044_206897886262.npz": {
+  "n": 1,
+  "sha256": "d835f4a267ac5dd0ffae22c69d6da9acada9ca79ec385e35405f67748ce0bdea"
+ },
+ "xray/test_LIDC-IDRI-0051_270739862838.npz": {
+  "n": 1,
+  "sha256": "f0c95817332c736e29354b1bf0944e506400d1075a5468e6f34db500980687ed"
+ },
+ "xray/test_LIDC-IDRI-0064_262761860587.npz": {
+  "n": 1,
+  "sha256": "5e846d6d1c8c61d0a15852d97505d7d30be91e4173931afd2f46c09d8f6d2a8a"
+ },
+ "xray/test_LIDC-IDRI-0090_733659914437.npz": {
+  "n": 1,
+  "sha256": "02111f8abf317ec359a2875b1e482a85233d79c80918e8e460b423f6325c31cb"
+ },
+ "xray/test_LIDC-IDRI-0095_523756584162.npz": {
+  "n": 1,
+  "sha256": "354fd47f5cd504777fbbb0f04203a45a64368b77803104eb150b8e2c6d2b3d53"
+ },
+ "xray/test_LIDC-IDRI-0097_330883305167.npz": {
+  "n": 1,
+  "sha256": "29a4c77eb1bc4625497f261215fbd875ba0cd08808f221c1a33cfdd16c00e5ce"
+ },
+ "xray/test_LIDC-IDRI-0098_169503174211.npz": {
+  "n": 1,
+  "sha256": "30bc0aa32aa3c5b55fe124d3deb7bf7069e30e3fd6b151e5fd697c5d6e7da012"
+ },
+ "xray/test_LIDC-IDRI-0109_948511322868.npz": {
+  "n": 1,
+  "sha256": "0ec794e30fa151caa6630906a92f5c9943af67f8f5cbea09646a05b918795c5a"
+ },
+ "xray/test_LIDC-IDRI-0110_112451608863.npz": {
+  "n": 1,
+  "sha256": "0969ba29fcd18b8138a146dc8ea50200b1fb1d1c254535e3faefd37ef6d61f13"
+ },
+ "xray/test_LIDC-IDRI-0125_708345136856.npz": {
+  "n": 1,
+  "sha256": "4628c4d724eab9f5be358f995f7bd70296d710330fded58ac1f592231cee84d3"
+ },
+ "xray/test_LIDC-IDRI-0126_080559930443.npz": {
+  "n": 1,
+  "sha256": "60bcfb87b3f1702a6673c10ce67d4feb612444d74ed54eebe3606e1583fcbb92"
+ },
+ "xray/test_LIDC-IDRI-0129_158013448483.npz": {
+  "n": 1,
+  "sha256": "0cd8efa4f06f33be7ed8d4de22087940710d8853fb18452495b36988727e0e0a"
+ },
+ "xray/test_LIDC-IDRI-0135_142488707241.npz": {
+  "n": 1,
+  "sha256": "64d2982571e2188838b5f8025fb8204e177a12e22559ba323722a39f1007d695"
+ },
+ "xray/test_LIDC-IDRI-0141_002179186448.npz": {
+  "n": 1,
+  "sha256": "315f10e5aa1c1df054c3d4ceb96b68b8bb5c6311a5c9b94acf4ec4622cd2de59"
+ },
+ "xray/test_LIDC-IDRI-0146_586785318356.npz": {
+  "n": 1,
+  "sha256": "48371e350ab74198e562c5f78164a21fe8601b620c85b35ad82e8317e4cd1ace"
+ },
+ "xray/test_LIDC-IDRI-0147_430251855516.npz": {
+  "n": 1,
+  "sha256": "cf51819ecdf978ff4995cd52ec8b3d70a2e7af7cbc4df84372876c4a4cef6e92"
+ },
+ "xray/test_LIDC-IDRI-0171_402379517327.npz": {
+  "n": 1,
+  "sha256": "306924f957ce01dd0770d2b6fd88b6afbfbf5e13c45f0a456f6a0360d67aa220"
+ },
+ "xray/test_LIDC-IDRI-0179_780428147035.npz": {
+  "n": 1,
+  "sha256": "26ed1bcf36652d37baf0b239f187cdcbe00cfc36be51673f9cf4a9ca034771d9"
+ },
+ "xray/test_LIDC-IDRI-0193_824073184000.npz": {
+  "n": 1,
+  "sha256": "55fe519b70b51f984852d94ccdcb56d1b34923026c0afe930ef9ce6622ced43f"
+ },
+ "xray/test_LIDC-IDRI-0202_673643535996.npz": {
+  "n": 1,
+  "sha256": "67c20a9c88281ee8de6dbb0a8272f308ef4b675fcc9d629236e73ad4fa142fc6"
+ },
+ "xray/test_LIDC-IDRI-0210_698403656547.npz": {
+  "n": 1,
+  "sha256": "aefc19231c939f9a03df8e7da37ba1797916be8fb814b5c9a52c46e8ed9ef1d8"
+ },
+ "xray/test_LIDC-IDRI-0217_192771594127.npz": {
+  "n": 1,
+  "sha256": "824ea372838b9cd948fc29461755dcef993f5b29e60f017eaa1f3dc6473beb14"
+ },
+ "xray/test_LIDC-IDRI-0234_774231039058.npz": {
+  "n": 1,
+  "sha256": "d513296f6ac4aefdd01964bdfb70cb40437aaac3563df89528cb3321ee5b676b"
+ },
+ "xray/test_LIDC-IDRI-0235_138191879489.npz": {
+  "n": 1,
+  "sha256": "64983b2649071c5d9ebf3ca8de1c70c42202020efd2425e67b6164392362c82f"
+ },
+ "xray/test_LIDC-IDRI-0256_631272429725.npz": {
+  "n": 1,
+  "sha256": "15d576516a2a9f9277d15f7a77cfd597241092b56718d29ea49efa0238228464"
+ },
+ "xray/test_LIDC-IDRI-0258_575368728516.npz": {
+  "n": 1,
+  "sha256": "23465e28b6242833758fe8a9952a91317db56893e98aa01b09fc5c70dffd1853"
+ },
+ "xray/test_LIDC-IDRI-0259_461487778787.npz": {
+  "n": 1,
+  "sha256": "01347f25672dae8abb987c7d5757c652404c637f5c2c1e24b9ae34a4a8ce657f"
+ },
+ "xray/test_LIDC-IDRI-0263_426112799260.npz": {
+  "n": 1,
+  "sha256": "3ad9cecde99e8d97973d3e3ffe29981557bf221af8dbe35610e96e3b1fc16e11"
+ },
+ "xray/test_LIDC-IDRI-0274_373489555815.npz": {
+  "n": 1,
+  "sha256": "c8284df6f6d597dd4c79c3abe50aed00501e2eb02bd581fe0a6a6013898de2b7"
+ },
+ "xray/test_LIDC-IDRI-0275_928777631671.npz": {
+  "n": 1,
+  "sha256": "614b8028846b7b9b2de6a626ca0e52080d44e89fbe6daba83d3508eadf8d412f"
+ },
+ "xray/test_LIDC-IDRI-0276_406814965089.npz": {
+  "n": 1,
+  "sha256": "d266f5349a5c14ce0159b721d43af4688d35441bd827b82a45f9a3f42164357f"
+ },
+ "xray/test_LIDC-IDRI-0281_724184557301.npz": {
+  "n": 1,
+  "sha256": "3e8d9d6d28eca2b821ce50b4bf98fa8183b8a47986a126ad3fcfd3a12cfb8412"
+ },
+ "xray/test_LIDC-IDRI-0285_997138987173.npz": {
+  "n": 1,
+  "sha256": "83ba76cc461b6ebe748da25d18693c36a73903dc426ef5265b11253dd12a631a"
+ },
+ "xray/test_LIDC-IDRI-0286_087557135585.npz": {
+  "n": 1,
+  "sha256": "b456bdec262ec3fb088be28e37cf93cb7859d24b1a62184a1eaac991507f8524"
+ },
+ "xray/test_LIDC-IDRI-0287_826773336973.npz": {
+  "n": 1,
+  "sha256": "e9a19468ca9041bed02b69b0fdcb0de1e27517bc9e5727c91f1396b7af38f4f6"
+ },
+ "xray/train_LIDC-IDRI-0006_818410044874.npz": {
+  "n": 1,
+  "sha256": "21ee638d6afa04ad8b606a0e879d4bc97059c67f28e4e466d53b5883b19d0ef7"
+ },
+ "xray/train_LIDC-IDRI-0010_607456750417.npz": {
+  "n": 1,
+  "sha256": "14d5c49ba56122716efd804bf0327ed6ac60c4863ca58a12ff047b0430fb7bc9"
+ },
+ "xray/train_LIDC-IDRI-0013_371960581239.npz": {
+  "n": 1,
+  "sha256": "93390e60ad8959f5962c3f8694ab006be30c05c72eff6ad1cf5f4784fcc0a480"
+ },
+ "xray/train_LIDC-IDRI-0015_718222319268.npz": {
+  "n": 1,
+  "sha256": "f780249219f12f54941bf4e5b6a4fa90dbaff534d39645c9e50e2cd8dc27ec69"
+ },
+ "xray/train_LIDC-IDRI-0018_421396392391.npz": {
+  "n": 1,
+  "sha256": "8d2987d19f6d84b2d90eff57877e4a51040a4fdc3d193a3a4ed4e425b65a7f22"
+ },
+ "xray/train_LIDC-IDRI-0020_563308759915.npz": {
+  "n": 1,
+  "sha256": "f2ad827874091c51807da5ef0aea4bcecaccf08e5f498243f7b739e5467aa92c"
+ },
+ "xray/train_LIDC-IDRI-0022_100167691452.npz": {
+  "n": 1,
+  "sha256": "b0b55de9e804b5e8d40a271db36d1e7325ccfd9c6645ead6e9dae105cfcd77a5"
+ },
+ "xray/train_LIDC-IDRI-0027_732239217531.npz": {
+  "n": 1,
+  "sha256": "286bc2415209460b9bc9dd772be1f7eb7e82fbdea681e0c91d2d5c6621abb81c"
+ },
+ "xray/train_LIDC-IDRI-0033_405112255999.npz": {
+  "n": 1,
+  "sha256": "051d738c50d010d89b97793c4a13cd4ac26701324ba1d6aadd08294ee9e33e78"
+ },
+ "xray/train_LIDC-IDRI-0038_998787361943.npz": {
+  "n": 1,
+  "sha256": "7fb9e4700ef70ad844da099c5db67d4c953c59e71247b060ff1556a62249bd64"
+ },
+ "xray/train_LIDC-IDRI-0042_491816908135.npz": {
+  "n": 1,
+  "sha256": "126a07d3ab251b100e4b2f6508e5fab245deeadb5f56157235789f5df8f29f7a"
+ },
+ "xray/train_LIDC-IDRI-0048_745905838713.npz": {
+  "n": 1,
+  "sha256": "6d99ee2018feb61e4ff8747cce673d94cbee77e3dfce588b2530bf40e7080972"
+ },
+ "xray/train_LIDC-IDRI-0050_238811253260.npz": {
+  "n": 1,
+  "sha256": "348c774008da0fdd6963c7d279d126f343bc9bccf64f6f8b2576feaa34c7a64e"
+ },
+ "xray/train_LIDC-IDRI-0052_974435337316.npz": {
+  "n": 1,
+  "sha256": "b230f7babd2abf8e6769d4a720a0ff4e6e2fa4b6718218db64604baf30c5f55e"
+ },
+ "xray/train_LIDC-IDRI-0054_187634428044.npz": {
+  "n": 1,
+  "sha256": "b59e5dcec71b505321a61fb8eb051c8cadc3a0518674fa96b43994030fdac82a"
+ },
+ "xray/train_LIDC-IDRI-0055_026607934320.npz": {
+  "n": 1,
+  "sha256": "d2f6f70c6cab4529b2d33a0c7aebdbd20005b2f57acb90ab1401334847058732"
+ },
+ "xray/train_LIDC-IDRI-0058_366671531510.npz": {
+  "n": 1,
+  "sha256": "dc0370c8e8c17fdd0e2764fb719406d95be85de6a86aa856b60b6262433f2764"
+ },
+ "xray/train_LIDC-IDRI-0066_990764243647.npz": {
+  "n": 1,
+  "sha256": "f1c1d7269fcf44f06842d7eac82af434af6feafbead9d541c7448cf353cf8005"
+ },
+ "xray/train_LIDC-IDRI-0076_333254188013.npz": {
+  "n": 1,
+  "sha256": "f4e2e20f2d49ffb9a3fe27c3dca25ad717cfbf59a4c1b62bfdd3fb681e839c2b"
+ },
+ "xray/train_LIDC-IDRI-0077_748760161842.npz": {
+  "n": 1,
+  "sha256": "857c8a38b601fbbab4899bf2cfeb8f2874b71499af3425e895af8118ee6c5e43"
+ },
+ "xray/train_LIDC-IDRI-0080_779362827315.npz": {
+  "n": 1,
+  "sha256": "b569ce01cf3bb4b0feb8dd26ab3baa5f82b3785a89b448dee049d0c82d330386"
+ },
+ "xray/train_LIDC-IDRI-0081_878750491956.npz": {
+  "n": 1,
+  "sha256": "a80bd1c3450381c842bc31d3cd55fb94919944bfc62cea02ccab336476b6e8f0"
+ },
+ "xray/train_LIDC-IDRI-0088_220830173368.npz": {
+  "n": 1,
+  "sha256": "9fe82bd1684d17daae2fcaf60086be02cf7992cc3b644e81f779fb863812bd43"
+ },
+ "xray/train_LIDC-IDRI-0091_042274577903.npz": {
+  "n": 1,
+  "sha256": "3445af7af323edf9e5dc2979ba781c995019466ff280941131897bdf6bf729c2"
+ },
+ "xray/train_LIDC-IDRI-0092_014868925501.npz": {
+  "n": 1,
+  "sha256": "7fa93522811fc110acef345fe53ea36235b810d5c9d17a0935a583ab08375aff"
+ },
+ "xray/train_LIDC-IDRI-0100_135758618924.npz": {
+  "n": 1,
+  "sha256": "bf7c6f359838761390faf329a14ddfe414ca94bad0713810eeee5d3d70d2ce70"
+ },
+ "xray/train_LIDC-IDRI-0101_231987463200.npz": {
+  "n": 1,
+  "sha256": "c1150e2e24b5916fee0f51c5b08f18d0ddcd43ab4212f94832a258c7a704452b"
+ },
+ "xray/train_LIDC-IDRI-0104_746560486789.npz": {
+  "n": 1,
+  "sha256": "0090582d5465aedc076668bc0e935582a510aec1eab5a38675fda2b850c1a43c"
+ },
+ "xray/train_LIDC-IDRI-0108_028985724001.npz": {
+  "n": 1,
+  "sha256": "3037769e1e81712af3dbae9f47586ddc6b08434e35e83a39374d550b1ba9324f"
+ },
+ "xray/train_LIDC-IDRI-0112_315885775345.npz": {
+  "n": 1,
+  "sha256": "380e63338fd84e366ea15ac2b2a9ed3f186c981ea2a1f3adf86dff96c91f492b"
+ },
+ "xray/train_LIDC-IDRI-0114_241945657562.npz": {
+  "n": 1,
+  "sha256": "f88ba343358b04f4cfeee2f7bcbef14aae5b9430b29423a7c49edaa5c6d7612a"
+ },
+ "xray/train_LIDC-IDRI-0119_752978997571.npz": {
+  "n": 1,
+  "sha256": "de446ca453e93bcc6bdf7b5b5b55e4ba3b02c06c14f3ca2dad68db65def9b69c"
+ },
+ "xray/train_LIDC-IDRI-0121_034260811649.npz": {
+  "n": 1,
+  "sha256": "7735cc0b3aad11e66c6848026ccaf9890bcaebd82df4e24d3a0ad90e4935e389"
+ },
+ "xray/train_LIDC-IDRI-0128_525827719595.npz": {
+  "n": 1,
+  "sha256": "975f8b23e718665689e03817c2aadee70e4004fec1be1023aae2f154f978476b"
+ },
+ "xray/train_LIDC-IDRI-0130_516044802880.npz": {
+  "n": 1,
+  "sha256": "b6c924b38358689b2be467943cea55052f92b505872bba1668c504d2321e35a6"
+ },
+ "xray/train_LIDC-IDRI-0133_756248496632.npz": {
+  "n": 1,
+  "sha256": "faed2cd6d2dc3df7d1ddbda54a4609eaf1cb0d8d96fd720542bfa6c6d684e058"
+ },
+ "xray/train_LIDC-IDRI-0144_132397300978.npz": {
+  "n": 1,
+  "sha256": "c5719dba7b8132125c9bd5d1852ca37f1a5dee64eab9172418fcfbd16366931f"
+ },
+ "xray/train_LIDC-IDRI-0148_674404156967.npz": {
+  "n": 1,
+  "sha256": "b9d9de09cfdfc4d1bf734c258774a7aacf271234a04ebd01b16e8633b7042f67"
+ },
+ "xray/train_LIDC-IDRI-0149_746798814586.npz": {
+  "n": 1,
+  "sha256": "2d78fa385e9bdd5fb5a65cf2f4ee78f89190b383b76406a8a0fe21fb53a1f88c"
+ },
+ "xray/train_LIDC-IDRI-0152_349669512025.npz": {
+  "n": 1,
+  "sha256": "376aebed3a1eaac6cbc8f4ec137c940e5e58c1b5466dc6d58997138e67cdf977"
+ },
+ "xray/train_LIDC-IDRI-0165_692304461229.npz": {
+  "n": 1,
+  "sha256": "681d4bdb81719cfba6c82d6f6bffb88b2837ec1b5033b573aaf9cbb67ac95d2a"
+ },
+ "xray/train_LIDC-IDRI-0170_714244525186.npz": {
+  "n": 1,
+  "sha256": "3beb31c74bc28ab52242a8771a3f3374b35b9c3b62f933c5dfb45eca139d7a62"
+ },
+ "xray/train_LIDC-IDRI-0174_601144314145.npz": {
+  "n": 1,
+  "sha256": "8a86ff60a1a0e27299332c3513a5c087455d0a86295f7ddb2f993d61fcd23823"
+ },
+ "xray/train_LIDC-IDRI-0177_882360612294.npz": {
+  "n": 1,
+  "sha256": "9583c301e64955e24b2a60f10e61b181eb8fa7cedebe327550b4f489ec3d5b9b"
+ },
+ "xray/train_LIDC-IDRI-0178_828778973420.npz": {
+  "n": 1,
+  "sha256": "6cf32a739a7b901b0580f12b3e727eb618a74041cf970d2b219eeb441f1d354b"
+ },
+ "xray/train_LIDC-IDRI-0181_295235589574.npz": {
+  "n": 1,
+  "sha256": "d916583406e6902ef280f514b222c63f4d378b785210b2fda1acd83193eda5e4"
+ },
+ "xray/train_LIDC-IDRI-0184_944974644547.npz": {
+  "n": 1,
+  "sha256": "a8041316849a33ddd51305a2e239f79a82acd5aeaec3513bffc4fea27368a753"
+ },
+ "xray/train_LIDC-IDRI-0185_631254521882.npz": {
+  "n": 1,
+  "sha256": "91906257994723e24feb898f5373dc8cca5c6fc1a5999e9cfba26c0ae9d4851d"
+ },
+ "xray/train_LIDC-IDRI-0189_213840739002.npz": {
+  "n": 1,
+  "sha256": "b34e15844d98ab07b1e46eb121023e1afa15d8b5d964805868f65b25d46b6013"
+ },
+ "xray/train_LIDC-IDRI-0190_477223733595.npz": {
+  "n": 1,
+  "sha256": "c713163745ac067385c738db29769756e9d5eda14dd55712215dd41d008e2013"
+ },
+ "xray/train_LIDC-IDRI-0195_881380477830.npz": {
+  "n": 1,
+  "sha256": "1460d220dee102f4a4526c211ebd5b8204210faca5e047ef16a3bc553d3ca1f1"
+ },
+ "xray/train_LIDC-IDRI-0199_039167164545.npz": {
+  "n": 1,
+  "sha256": "e8083d7aba7cdc8d236ab140e60f2e47e7ae2ef83906934dff1360c5278d73bd"
+ },
+ "xray/train_LIDC-IDRI-0204_433168700227.npz": {
+  "n": 1,
+  "sha256": "33ab3fa7768c290036021215978406bfafa2807dd54259e4c33a0ddcaa4a6137"
+ },
+ "xray/train_LIDC-IDRI-0207_502302178525.npz": {
+  "n": 1,
+  "sha256": "3820b41a84d047b418b48a6f62bc8e2b141e39ee9c1e19d92f5090199e20a8fa"
+ },
+ "xray/train_LIDC-IDRI-0209_971184694630.npz": {
+  "n": 1,
+  "sha256": "1573be072932dcb9a94625f2b40587b67596387e7972587f2252680800a687d0"
+ },
+ "xray/train_LIDC-IDRI-0213_611380976729.npz": {
+  "n": 1,
+  "sha256": "525e047f9ded6361fc0c2525fa72cab7f92418f901b6525e5f47693cebab0096"
+ },
+ "xray/train_LIDC-IDRI-0219_656939174714.npz": {
+  "n": 1,
+  "sha256": "0f9a15b259c1e4e16587b129b50acf46e99e6ba6a61688908a52156c7b82ab0b"
+ },
+ "xray/train_LIDC-IDRI-0220_116057858952.npz": {
+  "n": 1,
+  "sha256": "9d79e317dfd715e23d5376b1c6b57a5af8d898f1e122708e99f0ff2c3efb3ca3"
+ },
+ "xray/train_LIDC-IDRI-0222_948127902598.npz": {
+  "n": 1,
+  "sha256": "d76530ad975357ad923b92abebf05389b677678087e9bd4524c99c46090ec03d"
+ },
+ "xray/train_LIDC-IDRI-0224_884182831774.npz": {
+  "n": 1,
+  "sha256": "ab20f570eba003b70c702667f0ee3c711f33c07852f2d3af19329268020067ed"
+ },
+ "xray/train_LIDC-IDRI-0229_810344887171.npz": {
+  "n": 1,
+  "sha256": "01f7acf8c574cc3910dda852cc0712df0f12d4889c1c11bdab3ad9c280c90b6a"
+ },
+ "xray/train_LIDC-IDRI-0231_296247515744.npz": {
+  "n": 1,
+  "sha256": "c112075a0be5d646477c0a203c1f78f7c43830752ff51caf07f09878b1c4a45f"
+ },
+ "xray/train_LIDC-IDRI-0236_578779047738.npz": {
+  "n": 1,
+  "sha256": "b1da15f5c3ddeb34eba4f44336a03b157f013aac00d37f17ab12d611a78c70f7"
+ },
+ "xray/train_LIDC-IDRI-0240_201520794020.npz": {
+  "n": 1,
+  "sha256": "de3764d95f5afdc1207bd0eececd9518ec756d739ae50b9a02b196355a72bd1c"
+ },
+ "xray/train_LIDC-IDRI-0241_163753998534.npz": {
+  "n": 1,
+  "sha256": "d5be66fba914c9ca4f5d51558119459c52db42522a338ebcd80795e757798270"
+ },
+ "xray/train_LIDC-IDRI-0242_140474094227.npz": {
+  "n": 1,
+  "sha256": "30a41cf4e314a262ed7f34be4d3d9d2ff4e007176e57cdee967d5b230ba1ce73"
+ },
+ "xray/train_LIDC-IDRI-0245_300786279905.npz": {
+  "n": 1,
+  "sha256": "bbaa269c63520015c1993bae8ce85010cb10959e13ea0cdab5de1ee7b1af632f"
+ },
+ "xray/train_LIDC-IDRI-0248_076976443097.npz": {
+  "n": 1,
+  "sha256": "f9325bbd7f60169178137977c36134af4cdbaf7bb3c0ad3b9a73d5d6a1833a68"
+ },
+ "xray/train_LIDC-IDRI-0249_452353163175.npz": {
+  "n": 1,
+  "sha256": "54403ba5362ca2f19819d84322f4cb8d2b4756b348ae5445886a7ee71381aab7"
+ },
+ "xray/train_LIDC-IDRI-0250_901163107818.npz": {
+  "n": 1,
+  "sha256": "cb9015ee095b7db955a7def6e629f1dd6b6f4146997d3bc3e823874d6455d12c"
+ },
+ "xray/train_LIDC-IDRI-0251_199858995644.npz": {
+  "n": 1,
+  "sha256": "2de74e75fa7337896979598dba414a42ec99202edd520804ca6d93ce0a81918f"
+ },
+ "xray/train_LIDC-IDRI-0253_643319245598.npz": {
+  "n": 1,
+  "sha256": "a7bbd63dfbd855e6248c6e54daee371416e37d2a1d3bb1f0b5ae04d5df88968f"
+ },
+ "xray/train_LIDC-IDRI-0254_411312150212.npz": {
+  "n": 1,
+  "sha256": "68947a9c144a09ceecff4635232363c6d93913577c6a56a00df57b09328ff438"
+ },
+ "xray/train_LIDC-IDRI-0257_207409670214.npz": {
+  "n": 1,
+  "sha256": "0cc4cf830c26e16663eceb9d2ef0eba68391eed066384fc3b9dceaac9614ea5f"
+ },
+ "xray/train_LIDC-IDRI-0260_730089381779.npz": {
+  "n": 1,
+  "sha256": "84d7f345ac5868422455f2eea2fa7d594f525829f18e2ba6eec9e34204cecc81"
+ },
+ "xray/train_LIDC-IDRI-0272_666801179631.npz": {
+  "n": 1,
+  "sha256": "c1bc45bc14653c1cc4797ba26733a1623f434191a74da62a722ec0e6fd124e9c"
+ },
+ "xray/train_LIDC-IDRI-0279_715232736988.npz": {
+  "n": 1,
+  "sha256": "54d50b0b8ea1139e2c9c537883c6aa1779f2156fccfae283ef38d5d47b0c0955"
+ },
+ "xray/train_LIDC-IDRI-0280_914883139074.npz": {
+  "n": 1,
+  "sha256": "5c195a79406a0a816e2f137fca91d3271371b8347be3af15e54a631f8a7f4652"
+ },
+ "xray/train_LIDC-IDRI-0282_735695513309.npz": {
+  "n": 1,
+  "sha256": "5aa3492f9c5079032ed2c0b11fcc0c859e3b237f1d96fa70a1da1635f5676a0d"
+ },
+ "xray/train_LIDC-IDRI-0284_262254762795.npz": {
+  "n": 1,
+  "sha256": "4f9528e0786efcd16471c9b7445b4d5eabf2658b03e4c7209fe0f0c5e70c943c"
+ },
+ "ct/test_LIDC-IDRI-0278_402549886949.npz": {
+  "n": 8,
+  "sha256": "ccd97d8d3e5ff6fde9042ca42e94d50830fa53a3b9ca96a3c7c637fba5a766a1"
+ },
+ "ct/test_LIDC-IDRI-0417_259361352296.npz": {
+  "n": 8,
+  "sha256": "cb6b88d36b178b90b6dc969af4d208b5af9509d2e6c456c727554b3e4d8b7b9a"
+ },
+ "ct/test_LIDC-IDRI-0561_340281098509.npz": {
+  "n": 8,
+  "sha256": "3bacdd3d13468a139880a22740eb3457a479e8f6b4aa1e1a99874a3bf03c6bbc"
+ },
+ "ct/test_LIDC-IDRI-0578_989743099991.npz": {
+  "n": 8,
+  "sha256": "e4620556e39af2b9586f51f611856c8db8df8cac91b03272f05d8d0a0bf91de5"
+ },
+ "ct/test_LIDC-IDRI-0579_843898832756.npz": {
+  "n": 8,
+  "sha256": "848b262787fd8425eac5c8697851f96c1278bfb9384c7b276948b82400fbbf21"
+ },
+ "ct/test_LIDC-IDRI-0603_644850294647.npz": {
+  "n": 8,
+  "sha256": "e6acf5588b78e8f8eb49069ed9f3ca91d7e3d57afc266cf18c6833a6d1723841"
+ },
+ "ct/test_LIDC-IDRI-0759_679745963696.npz": {
+  "n": 8,
+  "sha256": "20ac1d2ccdea3cb5d656d700ec5320f815c215dcbc7ab2f83de3d792cb6ba876"
+ },
+ "ct/test_LIDC-IDRI-0886_598108159491.npz": {
+  "n": 8,
+  "sha256": "a04161268a1606646b22414ae0b2f703080ec3f810a0f6e216bf4a40b9dddeca"
+ },
+ "ct/test_LIDC-IDRI-0931_823157605135.npz": {
+  "n": 8,
+  "sha256": "c8b76aafccc948797f4e0b8577dbbab529497df10c954b4fff62e8a1f0254af2"
+ },
+ "ct/test_LIDC-IDRI-0933_480369521124.npz": {
+  "n": 8,
+  "sha256": "f63b5ce826df2d4c05bedd284678eae359993f541502d4ede6aa0c75b8987171"
+ },
+ "ct/train_LIDC-IDRI-0038_629083782428.npz": {
+  "n": 8,
+  "sha256": "80dc6c10b063bf12031e400feb526a6cd6ca28f00af0178558bf264d9a2e3237"
+ },
+ "ct/train_LIDC-IDRI-0039_302521201463.npz": {
+  "n": 8,
+  "sha256": "ca16e74db9abe339a0fcf256201bbfcf71ba4cbc4f3b528f01a8d74f8abbda02"
+ },
+ "ct/train_LIDC-IDRI-0126_384437758130.npz": {
+  "n": 8,
+  "sha256": "15b7d5c149b54881d63c857eda2595d67b9a9658efb7e9809279d07043e14beb"
+ },
+ "ct/train_LIDC-IDRI-0141_795986183786.npz": {
+  "n": 8,
+  "sha256": "69fbc6906dbd63d2e99b6d8c0e7e06c33b8db4dd1a235b85b00898fdcd25060f"
+ },
+ "ct/train_LIDC-IDRI-0142_671753343044.npz": {
+  "n": 8,
+  "sha256": "718493edb97542d3560abe04455db0b08ff885087f5eca44da761e3bd2882f8d"
+ },
+ "ct/train_LIDC-IDRI-0178_150799777603.npz": {
+  "n": 8,
+  "sha256": "5ebe978e87369a214411a76a56cee3e52da1bdc24672878d798f87b3fdc8b815"
+ },
+ "ct/train_LIDC-IDRI-0204_520281592139.npz": {
+  "n": 8,
+  "sha256": "c5a24d2a7e4672da3ac06645278c75d5593cd0f71957bba07ca8ebd41c55068a"
+ },
+ "ct/train_LIDC-IDRI-0244_612147226290.npz": {
+  "n": 8,
+  "sha256": "b301d9cc8f2344aca830808989ac9718d73ad7494fe1a3ec867ade1017bd4cb9"
+ },
+ "ct/train_LIDC-IDRI-0248_573021395302.npz": {
+  "n": 8,
+  "sha256": "8bbde4eb39653812cdaa1308428b5e787dd8b8a80188bd5cf8360037273c8110"
+ },
+ "ct/train_LIDC-IDRI-0309_356714831537.npz": {
+  "n": 8,
+  "sha256": "f85f82d5f8e0021a4753e75dd25b13a49e4f424b36702a0d949140bd7ec9c8dd"
+ },
+ "ct/train_LIDC-IDRI-0315_374885526223.npz": {
+  "n": 8,
+  "sha256": "312a8db6fe80bf8c5caea769c2e8c5fef6538ac5778994770b1eb70a47366236"
+ },
+ "ct/train_LIDC-IDRI-0386_915477907261.npz": {
+  "n": 8,
+  "sha256": "fd2e086d738c75a269dc8195cbbaaa3594303916109481b4612309e4f3ee509c"
+ },
+ "ct/train_LIDC-IDRI-0406_699587505022.npz": {
+  "n": 8,
+  "sha256": "480a222062e5352648e2cf414e2cf0019ffe37e449ef2ac09c8ec3fb8f52b4fe"
+ },
+ "ct/train_LIDC-IDRI-0461_219115904825.npz": {
+  "n": 8,
+  "sha256": "9dc2fe4daeca61b63ba44c8b73c91c635bca7d14bf4ce53fdf571d265ac57463"
+ },
+ "ct/train_LIDC-IDRI-0464_915919180358.npz": {
+  "n": 8,
+  "sha256": "b57ae84f043a47488cb31baeb0bc12afeaaaab9c1974ddc6533315dd35343c2e"
+ },
+ "ct/train_LIDC-IDRI-0477_253422844986.npz": {
+  "n": 8,
+  "sha256": "73fff11ae23c089b26a7f435bc5d87d9b062fb74606bf78b768be655805feade"
+ },
+ "ct/train_LIDC-IDRI-0555_247348251579.npz": {
+  "n": 8,
+  "sha256": "4394b9a4196cf7bb3c99de6fe2845180140a8fea6a065219a85b5fc8afdd2402"
+ },
+ "ct/train_LIDC-IDRI-0567_292800449011.npz": {
+  "n": 8,
+  "sha256": "119d3f097fa704b0308a145b25260d41c2edcabd891c268f266335c68ce2a00a"
+ },
+ "ct/train_LIDC-IDRI-0583_558382581802.npz": {
+  "n": 8,
+  "sha256": "0a3f0c4d6a5330586d7e30cc76e7984a44902fdb93f67f98ef9c47896cf90417"
+ },
+ "ct/train_LIDC-IDRI-0595_062175089637.npz": {
+  "n": 8,
+  "sha256": "d6025e8f1b5e568bd6129a8d88f9f330206aa34a8bb786250ffb99052d619070"
+ },
+ "ct/train_LIDC-IDRI-0605_818375859047.npz": {
+  "n": 8,
+  "sha256": "e2aa19db797a5864d1eed4e58e6e8f1b6113e103193c4b9333614d4df2e9dfb2"
+ },
+ "ct/train_LIDC-IDRI-0624_308721198594.npz": {
+  "n": 8,
+  "sha256": "c69fe697361d4e388083acf10e11a58fd546eeb7659cf987fe0516532a4577c3"
+ },
+ "ct/train_LIDC-IDRI-0676_785157561636.npz": {
+  "n": 8,
+  "sha256": "3ddb798b1f2aefe24a27bf5d32c246b2b251604ab0078e80981a2f3d9ed35269"
+ },
+ "ct/train_LIDC-IDRI-0713_479289015582.npz": {
+  "n": 8,
+  "sha256": "5183663199f419149aca51bedb3e283cd7e97f94cf86f6fda10da90c8b41c1b6"
+ },
+ "ct/train_LIDC-IDRI-0739_255751845296.npz": {
+  "n": 8,
+  "sha256": "442d483eca2c0ea0d94fb50279437e731446a068b09d315729b28fa956f7c022"
+ },
+ "ct/train_LIDC-IDRI-0838_698431118292.npz": {
+  "n": 8,
+  "sha256": "2710adf366c090da3a4d298cc836dadafd62ad4476c2dc90143661392e45781c"
+ },
+ "ct/train_LIDC-IDRI-0909_243058680403.npz": {
+  "n": 8,
+  "sha256": "bbddc4cdce02c0ecb366db950942e47f7d64e8d8687c49f7d8be6ea18f9e3a3e"
+ },
+ "ct/train_LIDC-IDRI-0926_497344006818.npz": {
+  "n": 8,
+  "sha256": "be17a21336322cac5027ba3bb09c329904c6a311300fd347bf69bb1ee9f998f7"
+ },
+ "ct/train_LIDC-IDRI-0957_954571551463.npz": {
+  "n": 8,
+  "sha256": "11587875868163c3fe3c79359ff93969e06e2381d24df13c5516fdaa9fbc1f69"
+ },
+ "ct/train_LIDC-IDRI-0991_389988207064.npz": {
+  "n": 8,
+  "sha256": "8a8db8e39efa13d63bb9868d58bd11ea78b222821dcd4606fdeaeb1c3c533474"
+ },
+ "mri/test_UPENN-GBM-00076_876890896754.npz": {
+  "n": 6,
+  "sha256": "1e3667e8ed4e5132d133581c66a6ad77c3ec315c5f043b1df894c626367af3e8"
+ },
+ "mri/test_UPENN-GBM-00121_192264596521.npz": {
+  "n": 6,
+  "sha256": "2979fcdf9d741b6f98f957f4025dc7b16baa2b75571357de742be5fd8865a2c6"
+ },
+ "mri/test_UPENN-GBM-00121_269943192568.npz": {
+  "n": 6,
+  "sha256": "1f4f5ce053002afa6624dc31e6e34c974f2bfde2f436e78329d6bd1a884bfce4"
+ },
+ "mri/test_UPENN-GBM-00121_581333377822.npz": {
+  "n": 6,
+  "sha256": "92f3d0d2a7b678c05813433d0d118f25f7ff944d668199f9d19b547f1c1ea068"
+ },
+ "mri/test_UPENN-GBM-00121_661395010609.npz": {
+  "n": 6,
+  "sha256": "ca3771a227b9255c82c2655ae0f0f220ac90007d8fe855faec62cadddbef0d93"
+ },
+ "mri/test_UPENN-GBM-00358_220388652602.npz": {
+  "n": 6,
+  "sha256": "dc1d7524f38b7c3ced6c1da9823022c62a2513a7058f766811512345ff9dd87f"
+ },
+ "mri/test_UPENN-GBM-00358_272589220254.npz": {
+  "n": 6,
+  "sha256": "757f5e574c633ed876a2a9c72d6cba32af3dbeaf6ce6d8aa354e7ce6c355b95d"
+ },
+ "mri/test_UPENN-GBM-00358_480959802469.npz": {
+  "n": 6,
+  "sha256": "ca419ba99fe20bd310ef67ef57be70e980b0eb45a475178bdb6e7939dd50fee2"
+ },
+ "mri/test_UPENN-GBM-00358_882866322252.npz": {
+  "n": 6,
+  "sha256": "f53080cb7feb9e3b9c604f0b45518685e49f36c08e4c0ca6eca37b2b8631ed40"
+ },
+ "mri/test_UPENN-GBM-00361_412941275213.npz": {
+  "n": 6,
+  "sha256": "dfdc701c529aaec2ac27a98d3adde5f7fefb19d4461c6dbe7372359e58975dd8"
+ },
+ "mri/test_UPENN-GBM-00361_473602349763.npz": {
+  "n": 6,
+  "sha256": "a53c13a827d3e326584aab509d03f817fb01ec54be524c17255732755152d2d1"
+ },
+ "mri/test_UPENN-GBM-00361_665765652507.npz": {
+  "n": 6,
+  "sha256": "7f1fd37adfffdc3e32c3318fadb01c75594dfc37a824586d7058be272818958b"
+ },
+ "mri/test_UPENN-GBM-00361_816228801940.npz": {
+  "n": 6,
+  "sha256": "2bd51769b0a83f1643d2b780a771c37225276646b6c126b1bb4e8be718dad950"
+ },
+ "mri/test_UPENN-GBM-00363_163058903449.npz": {
+  "n": 6,
+  "sha256": "6bf2e37a6ad3d82f82d346a4dd2a5cab420f9f134638756b1f74fff334f4fc74"
+ },
+ "mri/test_UPENN-GBM-00450_124681252112.npz": {
+  "n": 6,
+  "sha256": "3f65ea49babe458c60e2718927c499df77a9dcc3573725078325013682f8fa26"
+ },
+ "mri/test_UPENN-GBM-00450_640214412714.npz": {
+  "n": 6,
+  "sha256": "25866b1d5e5c2a266249bd8af11fc5fb5cd66cf4ed9bb424ffb0f4a72d77996c"
+ },
+ "mri/test_UPENN-GBM-00450_708741571981.npz": {
+  "n": 6,
+  "sha256": "757356a13be0c063f36800e42cd4d59c74a8ddd1f27d945864d58233969b2561"
+ },
+ "mri/test_UPENN-GBM-00508_153918805857.npz": {
+  "n": 6,
+  "sha256": "bf3e82db68221da516a404b279ebf2c48091c1299f49ed1f045810f70755324e"
+ },
+ "mri/test_UPENN-GBM-00508_645172640838.npz": {
+  "n": 6,
+  "sha256": "beefd254d7a833232e3f76537a6886c8d64a9ac8b76838e77311793e94b224fa"
+ },
+ "mri/test_UPENN-GBM-00508_753635242431.npz": {
+  "n": 6,
+  "sha256": "64c7d70d44cb5da4e0f92c09af39f2e38a10792f96cebc4e67cd162add1efbbe"
+ },
+ "mri/test_UPENN-GBM-00593_210111159102.npz": {
+  "n": 6,
+  "sha256": "e0995e0db428ab735610b6ca0b9539cf9ace7ec6400baca462bc386d5ee7a46d"
+ },
+ "mri/test_UPENN-GBM-00593_586781226206.npz": {
+  "n": 6,
+  "sha256": "65c1900d583ffeb8e9e3b660c7959fc486c6ce620d2be472405b1527a9caeefe"
+ },
+ "mri/test_UPENN-GBM-00593_768532385997.npz": {
+  "n": 6,
+  "sha256": "a2a007af2d878b39d0d1c51cf718e1b4edd5bc5252ccbbd36ac474aa135d538f"
+ },
+ "mri/train_UPENN-GBM-00013_113939233815.npz": {
+  "n": 6,
+  "sha256": "5019228612937c35dd9a7a65b3e7da5d26ca5a1eb4cd6c6b620edc76f57943b7"
+ },
+ "mri/train_UPENN-GBM-00013_282190387991.npz": {
+  "n": 6,
+  "sha256": "26c6476ed964964a0ffbc1d7117b69bfcb895964f49f461ba64d4698e6cdc8e7"
+ },
+ "mri/train_UPENN-GBM-00013_551943700972.npz": {
+  "n": 6,
+  "sha256": "ea8ec91bd365232fae9dbc0c0b9a58ecdf33b6a69f96e380bae768982c6d97b6"
+ },
+ "mri/train_UPENN-GBM-00025_121668033342.npz": {
+  "n": 6,
+  "sha256": "a011ca2a21a348b82cf5e7b5898aad8626417741b96aeef92048de626d2bec9d"
+ },
+ "mri/train_UPENN-GBM-00025_333110265165.npz": {
+  "n": 6,
+  "sha256": "b4442b95d361f8b3d5f0d50fb9b031c89dc64970d95a28e359acf950f24e2a2a"
+ },
+ "mri/train_UPENN-GBM-00025_933807367690.npz": {
+  "n": 6,
+  "sha256": "fb4327ea8c022b750c5f43501b8cdcce3c848883a02afd0dd99131d3793a1d11"
+ },
+ "mri/train_UPENN-GBM-00053_226273646566.npz": {
+  "n": 6,
+  "sha256": "4d4215ad8fb7bba784f24a804141a68b219641801a7a615897e6c014de61426d"
+ },
+ "mri/train_UPENN-GBM-00053_535399832429.npz": {
+  "n": 6,
+  "sha256": "28bc46fa1d3bfa756207b112f76ae4631953c952ff08cf1f89605f9967b5e539"
+ },
+ "mri/train_UPENN-GBM-00053_605705109314.npz": {
+  "n": 6,
+  "sha256": "27cc284718d5b033ba53567bdd6f6bd78767e0f02cc47d97ba9c450aa29a4bbc"
+ },
+ "mri/train_UPENN-GBM-00053_871531478762.npz": {
+  "n": 6,
+  "sha256": "c4e7d83966af835af968edf332c98cb7f59071e9179d1e0d7174f23c491f92e6"
+ },
+ "mri/train_UPENN-GBM-00084_104258331866.npz": {
+  "n": 6,
+  "sha256": "4a9af121bdd60a4930ef5caae5f34a3b048d952e03b7c892a2a711890459ddc7"
+ },
+ "mri/train_UPENN-GBM-00084_432650014254.npz": {
+  "n": 6,
+  "sha256": "fb3f27a009a3ea797087494d78a94aa68f281d74d7ce96feaa12e882219e5e19"
+ },
+ "mri/train_UPENN-GBM-00084_647504663881.npz": {
+  "n": 6,
+  "sha256": "711f306b45699519e58950e1312c868a86bd984164b731d023acedf633d58599"
+ },
+ "mri/train_UPENN-GBM-00084_705135505613.npz": {
+  "n": 6,
+  "sha256": "8bcc27196b78a467e239a0376664d79423681be2c1f235b25e4bd99cf4ac86f8"
+ },
+ "mri/train_UPENN-GBM-00096_171127065003.npz": {
+  "n": 6,
+  "sha256": "b55f34b6bf50a7a3dc7bb376ef25d474cd89cb62251e52c5c2d3e32e4465c8e4"
+ },
+ "mri/train_UPENN-GBM-00096_445952623541.npz": {
+  "n": 6,
+  "sha256": "2808791ae753ffc2b525118ab7d37ecb7f3fca78d3454941d5b362c62d570e30"
+ },
+ "mri/train_UPENN-GBM-00096_649284497373.npz": {
+  "n": 6,
+  "sha256": "0ddae2007550c47a3216a083c48c80226926d0a87e1c4f438b08167e8f3e992c"
+ },
+ "mri/train_UPENN-GBM-00096_875261574167.npz": {
+  "n": 6,
+  "sha256": "5f1f4597fd66844d36e759c131545bad63f91dc1e6fa861b8613e2561839baf1"
+ },
+ "mri/train_UPENN-GBM-00138_281028396773.npz": {
+  "n": 6,
+  "sha256": "829fc63577e2a8bc8edad05a94839234d5450d82ccb9768466e5272c1c272d25"
+ },
+ "mri/train_UPENN-GBM-00138_439513361467.npz": {
+  "n": 6,
+  "sha256": "5223eab9807cfd42721d8d1ca52f0eed3b9382f9ca0174cbe29595da87ba1c58"
+ },
+ "mri/train_UPENN-GBM-00138_651302567220.npz": {
+  "n": 6,
+  "sha256": "c23e598fbd75d3ba970d216ccd103b943087b78865efa86b044dc812d57bcb36"
+ },
+ "mri/train_UPENN-GBM-00138_784518165881.npz": {
+  "n": 6,
+  "sha256": "d2ddbc6c8595a53a605e72ac4f8743bdb6a874554ab2a54475ae2bfd9550460d"
+ },
+ "mri/train_UPENN-GBM-00175_182784856779.npz": {
+  "n": 6,
+  "sha256": "d0677233f704bb74e7bf08f63a7e803e872f04280816b2dbef2c04f4faf32f26"
+ },
+ "mri/train_UPENN-GBM-00175_215953968931.npz": {
+  "n": 6,
+  "sha256": "94ca2c913fa295e5c13aa272555a4c0be58b209be612f62060032a767c854edf"
+ },
+ "mri/train_UPENN-GBM-00175_427372252415.npz": {
+  "n": 6,
+  "sha256": "d55b4d4009c51cc495c64ea00ecc7c8b02274454a1873b4ebb829a7c4a0827bf"
+ },
+ "mri/train_UPENN-GBM-00175_775175382391.npz": {
+  "n": 6,
+  "sha256": "5bf6a593a3fee3e5288deb62b855b1b8eba9cf329f8e9560a4b7887ef5e7a4fb"
+ },
+ "mri/train_UPENN-GBM-00185_281592081741.npz": {
+  "n": 6,
+  "sha256": "b25d780cc2329a1837c23d3374b8a565eb0466ff0f0007a29b1c8c21124cb9c1"
+ },
+ "mri/train_UPENN-GBM-00185_541774977262.npz": {
+  "n": 6,
+  "sha256": "510dcd4a653eee7ba7f0f0a474c3d16d8bc4dcf10fb9b17a5649bbf755c1d6a0"
+ },
+ "mri/train_UPENN-GBM-00185_575595448157.npz": {
+  "n": 6,
+  "sha256": "a5c289fe0231adac0df6e1d2b5d022148f0cd694383182dc3655f35ae701eca4"
+ },
+ "mri/train_UPENN-GBM-00185_677889246140.npz": {
+  "n": 6,
+  "sha256": "dd50a5412eaa02966a99ec484bd2143d5ea8f854fa389d870e6bea9250332937"
+ },
+ "mri/train_UPENN-GBM-00252_087698896219.npz": {
+  "n": 6,
+  "sha256": "aae5785ef260f08892cb7198b0eb89cba117a632328dbc912e144dc32b50f117"
+ },
+ "mri/train_UPENN-GBM-00252_596793038173.npz": {
+  "n": 6,
+  "sha256": "8eee121070129fc524e8f81f267116531c41a30371fa60e9c80482e4b935820d"
+ },
+ "mri/train_UPENN-GBM-00252_757767741405.npz": {
+  "n": 6,
+  "sha256": "0b7d84ecf740e8e50b87b51700fd6001f5a326410b0d6b8b16a908e31da1abf2"
+ },
+ "mri/train_UPENN-GBM-00270_434875673918.npz": {
+  "n": 6,
+  "sha256": "90b76f78712631e473335acfa8ee967251c63396ef4c6f902c3ec96d429e3bbf"
+ },
+ "mri/train_UPENN-GBM-00270_583323344348.npz": {
+  "n": 6,
+  "sha256": "a1413809856fc9a7aebca765511e0922b29c93fa67d102831b54c00d646e3eba"
+ },
+ "mri/train_UPENN-GBM-00270_809915704293.npz": {
+  "n": 6,
+  "sha256": "5dbbf90d20546597c43be6f6db4b366a63e4d1452a45fcc46908fa1a6c0f7547"
+ },
+ "mri/train_UPENN-GBM-00290_036258860774.npz": {
+  "n": 6,
+  "sha256": "20c382123495aee7e670f50ade60ceb6564f01284e8dab2d7207f3d6a8fbb0e9"
+ },
+ "mri/train_UPENN-GBM-00290_196653836466.npz": {
+  "n": 6,
+  "sha256": "432f264aab38feb25a8aba67583959509da399233580deb602801d2e1e82ed6a"
+ },
+ "mri/train_UPENN-GBM-00290_285515790108.npz": {
+  "n": 6,
+  "sha256": "c969a34fed68165c95090114e1466391f6eb51b9ee4718420dd6f5759b52216f"
+ },
+ "mri/train_UPENN-GBM-00290_294662112673.npz": {
+  "n": 6,
+  "sha256": "69d8380b68beb1f7ddd93cf64f601807f67f3a138b351a318b05dce56fffd97d"
+ },
+ "mri/train_UPENN-GBM-00315_034659657404.npz": {
+  "n": 6,
+  "sha256": "729e78cd3a65d9aee67bb3ce8739d4c55b9ec3c741a64a05b62e323bc273a014"
+ },
+ "mri/train_UPENN-GBM-00315_464011579370.npz": {
+  "n": 6,
+  "sha256": "dfaf53120847e8bf994dac219e0454eabb88a5c890365f3e95ef0516fb7231b2"
+ },
+ "mri/train_UPENN-GBM-00315_517402561201.npz": {
+  "n": 6,
+  "sha256": "6272b48ffd6c959d4e3af9ab72b177f1dd0c8cf27d11cc4c1d3b833e8bd57d59"
+ },
+ "mri/train_UPENN-GBM-00315_618897954148.npz": {
+  "n": 6,
+  "sha256": "39119dcfb560358d9d07886d617ffaafeb181d444af1de216b2b645e16374be5"
+ },
+ "mri/train_UPENN-GBM-00362_132091208814.npz": {
+  "n": 6,
+  "sha256": "1d4a67bc2932bb761bc70c65234ea62e824674c4870bd54fe23dbd319e3cf3ac"
+ },
+ "mri/train_UPENN-GBM-00362_578259049012.npz": {
+  "n": 6,
+  "sha256": "f1046e76e4db768a12d2d4584a210dbe1e2ee5af3400d41b05cf8a28612edae6"
+ },
+ "mri/train_UPENN-GBM-00362_719071184458.npz": {
+  "n": 6,
+  "sha256": "9f331b307a3684e42e0a345557cf21ee5ce835972d91fa4083f24229f5041269"
+ },
+ "mri/train_UPENN-GBM-00368_264099249627.npz": {
+  "n": 6,
+  "sha256": "f2f9d28bd92172d490c77397e08f3cd5f656ef5de387323bd6114cf82d744660"
+ },
+ "mri/train_UPENN-GBM-00413_313248438428.npz": {
+  "n": 6,
+  "sha256": "65ac611d88269f8b2acb6fb19c16df41d01054794791fa5a47b7be898236283c"
+ },
+ "mri/train_UPENN-GBM-00436_570590877516.npz": {
+  "n": 6,
+  "sha256": "c1f771ce79d80f4a0ad1e32e514ca994058ecb8ff1f947517160f33509ff1bf5"
+ },
+ "mri/train_UPENN-GBM-00445_090072850487.npz": {
+  "n": 6,
+  "sha256": "fde8191948e2d11149a5d951496931901f42cb7915451877c47b568b88f53457"
+ },
+ "mri/train_UPENN-GBM-00446_625233055068.npz": {
+  "n": 6,
+  "sha256": "8117cd55048f46c81b1ae4ceec37d09e52ffb3d39f157402109632c2c1815d68"
+ },
+ "mri/train_UPENN-GBM-00471_008456139363.npz": {
+  "n": 6,
+  "sha256": "65909b74ea910ebf20679968dcf01a1c4bbee6fd614b5b9b042804dad4cbd962"
+ },
+ "mri/train_UPENN-GBM-00472_894335633218.npz": {
+  "n": 6,
+  "sha256": "190fe5d1df859aec52ece42f342601b3e0dc756c22df1d738f8168d9c0095acd"
+ },
+ "mri/train_UPENN-GBM-00477_012827126196.npz": {
+  "n": 6,
+  "sha256": "d4fd7ebd147cb5e73ceb4f75a7c92acab50aa424390f2e99d7a5a59f3afd8ad8"
+ },
+ "mri/train_UPENN-GBM-00520_349844103799.npz": {
+  "n": 6,
+  "sha256": "09fdf15f4d3be96a1c7e3af6639bf0b09fa292805b34312237f9128c4d88913e"
+ },
+ "mri/train_UPENN-GBM-00521_103826456315.npz": {
+  "n": 6,
+  "sha256": "da21952ecd2187018d3afedebf9256248d4820588ddba5bae15ebb317f060736"
+ },
+ "mri/train_UPENN-GBM-00553_595842189568.npz": {
+  "n": 6,
+  "sha256": "1f8e1e5d4e10715ff4628dc725d55c1398cb364e3e5916de3bba0cc6861872bc"
+ }
+}
